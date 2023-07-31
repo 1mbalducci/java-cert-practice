@@ -2,6 +2,22 @@ package duke;
 
 public class ShopApp {
     public static void main (String[] args) {
+        Customer newCustomer = new Customer();
+        newCustomer.name = "Pinky";
+        newCustomer.size = "S";
+        int measurement= 3;
+
+        switch (measurement>3 ? "Large":"Small"){
+            case "Small":
+                newCustomer.size= "S";
+                break;
+            case "Large":
+                newCustomer.size= "L";
+            default:
+                newCustomer.size = "M";
+
+        }
+
         Double tax = .2;
 
         Clothing item1= new Clothing();
@@ -19,4 +35,6 @@ public class ShopApp {
         System.out.println("Item1 is a "+ item1.description + " that costs $"+ totalItem1 + " with tax.");
         System.out.println("Item2 is a "+ item2.description + " that costs $"+ totalItem2+".");
     }
+
+
 }
