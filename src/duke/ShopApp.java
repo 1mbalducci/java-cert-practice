@@ -1,5 +1,7 @@
 package duke;
 
+import java.util.ArrayList;
+
 public class ShopApp {
     public static void main(String[] args) {
         Customer newCustomer = new Customer();
@@ -29,7 +31,15 @@ public class ShopApp {
         item4.price = 10.5;
         item4.size = "M";
 
-        Clothing[] items = {item1, item2, item3, item4};
+        ArrayList<Clothing> items= new ArrayList<Clothing>();
+        items.add(item1);
+        items.add(item2);
+        items.add(item3);
+        items.add(item4);
+
+        System.out.println(items);
+
+
 
         Double totalItem1;
 //        Double totalItem2 = item2.price * (1+tax);
@@ -37,15 +47,16 @@ public class ShopApp {
         String detailsItem;
 
         newCustomer.addItems(items);
-        Clothing[] itemsInTheCart = newCustomer.getItems();
 
 
-        for (Clothing item : itemsInTheCart) {
-            System.out.println(item.getDescription() + " =" + item.getPrice() + " with tax and it's size " + item.getSize());
-            System.out.println(newCustomer+ " purchased "+ item.getSize() );
+
+        for (Clothing item : items) {
+            System.out.println(item.getDescription() + " =" + item.getPrice() + " with tax and it's size is " + item.getSize());
+            System.out.println(newCustomer.getName()+ " purchased "+ item.getSize() );
         }
 
         newCustomer.getTotalClothingCost(newCustomer.getItems());
+        System.out.println(newCustomer.getTotal());
 
     }
 }

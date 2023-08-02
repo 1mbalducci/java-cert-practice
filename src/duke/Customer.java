@@ -1,5 +1,7 @@
 package duke;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,37 +9,41 @@ import java.util.List;
 public class Customer {
         private String name;
         private String size;
-        private Clothing [] items;
+        private ArrayList< Clothing>items;
+        private double total=0.0;
 
-        public Clothing[] addItems(Clothing [] items){
-                return this.items = items;
+        public ArrayList< Clothing> addItems(ArrayList<Clothing> items) {
+
+                return this.items=items;
         }
 
-        public Double getTotalClothingCost(Clothing [] items) {
-                double total = 0.0;
-                for (Clothing item : items) {
-
-                        if (item.getSize().equals(this.size)) {
-
-                                System.out.println(item.getPrice());
+        public Double getTotalClothingCost(ArrayList<Clothing> itemsPurchased) {
+                for (Clothing totalItem : items) {
+                                System.out.println(totalItem.getPrice());
                                 //item.price = item.price * (1 + tax);
                                 //System.out.println(item.price);
-                                if (total + item.getPrice() < 35) {
-                                        total += item.getPrice();
+                                if (this.total + totalItem.getPrice() < 35) {
+                                        total += totalItem.getPrice();
                                 }
                         }
-                }
-                System.out.println(total);
-                return total;
 
+                                return total;
+                }
+
+
+        public double getTotal() {
+                return total;
         }
 
+        public void setTotal(double total) {
+                this.total = total;
+        }
 
-        public Clothing[] getItems() {
+        public ArrayList<Clothing> getItems() {
                 return items;
         }
 
-        public void setItems(Clothing[] items) {
+        public void setItems(ArrayList<Clothing> items) {
                 this.items = items;
         }
 
