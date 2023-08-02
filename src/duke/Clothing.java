@@ -22,8 +22,11 @@ public class Clothing {
     }
 
     public void setPrice(Double price) {
-
-        this.price = price;
+        if (price > 10) {
+            return;
+        } else {
+            this.price = price;
+        }
     }
 
     public String getSize() {

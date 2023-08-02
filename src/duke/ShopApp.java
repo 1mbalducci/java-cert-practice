@@ -4,22 +4,8 @@ public class ShopApp {
     public static void main(String[] args) {
         Customer newCustomer = new Customer();
         newCustomer.name = "Pinky";
-        int measurement = 3;
-
-        switch (measurement) {
-            case 1, 2, 3:
-                newCustomer.size = "S";
-                break;
-            case 7, 8, 9:
-                newCustomer.size = "L";
-                break;
-            default:
-                newCustomer.size = "M";
-
-        }
-
-
-        Double tax = .2;
+        newCustomer.setSize(7);
+        //Double tax = .2;
 
         Clothing item1 = new Clothing();
         Clothing item2 = new Clothing();
@@ -28,7 +14,7 @@ public class ShopApp {
 
         item1.description = "Blue Jacket";
         item1.price = 20.9;
-        item1.size = "M";
+        item1.size = "L";
 
         item2.description = "Orange T-shirt";
         item2.price = 10.5;
@@ -36,7 +22,7 @@ public class ShopApp {
 
         item3.description = "Green Scarf";
         item3.price = 5.0;
-        item3.size = "S";
+        item3.size = "L";
 
         item4.description = "Blue T-Shirt";
         item4.price = 10.5;
@@ -50,20 +36,20 @@ public class ShopApp {
         String detailsItem;
 
         for (Clothing item : items) {
-           if (item.size.equals(newCustomer.size)) {
-               System.out.println(item.price);
-               item.price = item.price * (1 + tax);
-               System.out.println(item.price);
-               if (total + item.price < 15) {
-                   total += item.price;
-                   break;
+           if (item.getSize().equals(newCustomer.getSize())) {
+               System.out.println(item.getPrice());
+               //item.price = item.price * (1 + tax);
+               //System.out.println(item.price);
+               if (total + item.getPrice() < 35) {
+                   total += item.getPrice();
                }
+               System.out.println(total);
            }
-            System.out.println(total);
 
 
 
-            System.out.println(item.description+ " costs $"+item.price +" with tax and is size " + item.size);
+
+            System.out.println(item.getDescription()+ " costs $"+item.getPrice() +" with tax and is size " + item.getSize());
         }
 
 
