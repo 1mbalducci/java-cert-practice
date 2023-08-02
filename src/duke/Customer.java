@@ -13,15 +13,18 @@ public class Customer {
         private double total=0.0;
 
         public ArrayList< Clothing> addItems(ArrayList<Clothing> items) {
-
-                return this.items=items;
+                ArrayList <Clothing> itemsPurchased= new ArrayList<>();
+                for (Clothing  item:items) {
+                        if ( item.getSize().equals(this.size)){
+                                itemsPurchased.add(item);
+                        }
+                }
+                return this.items=itemsPurchased;
         }
 
         public Double getTotalClothingCost(ArrayList<Clothing> itemsPurchased) {
                 for (Clothing totalItem : items) {
-                                System.out.println(totalItem.getPrice());
-                                //item.price = item.price * (1 + tax);
-                                //System.out.println(item.price);
+                                //System.out.println(totalItem.getPrice());
                                 if (this.total + totalItem.getPrice() < 35) {
                                         total += totalItem.getPrice();
                                 }

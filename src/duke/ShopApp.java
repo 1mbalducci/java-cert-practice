@@ -6,7 +6,7 @@ public class ShopApp {
     public static void main(String[] args) {
         Customer newCustomer = new Customer();
         newCustomer.setName("Pinky");
-        newCustomer.setSize(5);
+        newCustomer.setSize(3);
 
         System.out.println(newCustomer.getName() + " is size " + newCustomer.getSize());
 
@@ -25,7 +25,7 @@ public class ShopApp {
 
         item3.description = "Green Scarf";
         item3.price = 5.0;
-        item3.size = "L";
+        item3.size = "S";
 
         item4.description = "Blue T-Shirt";
         item4.price = 10.5;
@@ -50,13 +50,12 @@ public class ShopApp {
 
 
 
-        for (Clothing item : items) {
+        for (Clothing item : newCustomer.getItems()) {
             System.out.println(item.getDescription() + " =" + item.getPrice() + " with tax and it's size is " + item.getSize());
-            System.out.println(newCustomer.getName()+ " purchased "+ item.getSize() );
         }
 
         newCustomer.getTotalClothingCost(newCustomer.getItems());
-        System.out.println(newCustomer.getTotal());
+        System.out.println("Total Price for " + newCustomer.getName() + " was "+ newCustomer.getTotal());
 
     }
 }
