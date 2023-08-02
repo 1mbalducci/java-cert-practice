@@ -22,8 +22,8 @@ public class Clothing {
     }
 
     public void setPrice(Double price) {
-        if (price > 10) {
-            return;
+        if (price < minPrice) {
+            this.price= this.minPrice;
         } else {
             this.price = price;
         }

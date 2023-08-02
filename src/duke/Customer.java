@@ -1,13 +1,45 @@
 package duke;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Customer {
-        String name;
-        String size;
-        ArrayList<String> choices;
+        private String name;
+        private String size;
+        private Clothing [] items;
 
+        public Clothing[] addItems(Clothing [] items){
+                return this.items = items;
+        }
+
+        public Double getTotalClothingCost(Clothing [] items) {
+                double total = 0.0;
+                for (Clothing item : items) {
+
+                        if (item.getSize().equals(this.size)) {
+
+                                System.out.println(item.getPrice());
+                                //item.price = item.price * (1 + tax);
+                                //System.out.println(item.price);
+                                if (total + item.getPrice() < 35) {
+                                        total += item.getPrice();
+                                }
+                        }
+                }
+                System.out.println(total);
+                return total;
+
+        }
+
+
+        public Clothing[] getItems() {
+                return items;
+        }
+
+        public void setItems(Clothing[] items) {
+                this.items = items;
+        }
 
         public String getName() {
                 return name;
@@ -27,21 +59,15 @@ public class Customer {
         public void setSize(int measurement) {
                 switch (measurement) {
                         case 1, 2, 3:
-                                this.size = "S";
+                                setSize("S");
                                 break;
                         case 7, 8, 9:
-                                this.size = "L";
+                                setSize("L");
                                 break;
                         default:
                                 this.size = "M";
                 }
 
         }
-        public ArrayList<String> getChoices() {
-                return choices;
-        }
 
-        public void setChoices(ArrayList<String> choices) {
-                this.choices = choices;
-        }
 }
