@@ -6,7 +6,7 @@ public class ShopApp {
         newCustomer.setName("Pinky");
         newCustomer.setSize(5);
 
-        System.out.println(newCustomer.getName() + "is size " + newCustomer.getSize());
+        System.out.println(newCustomer.getName() + " is size " + newCustomer.getSize());
 
         Clothing item1 = new Clothing();
         Clothing item2 = new Clothing();
@@ -37,10 +37,16 @@ public class ShopApp {
         String detailsItem;
 
         newCustomer.addItems(items);
+        Clothing[] itemsInTheCart = newCustomer.getItems();
+
+
+        for (Clothing item : itemsInTheCart) {
+            System.out.println(item.getDescription() + " =" + item.getPrice() + " with tax and it's size " + item.getSize());
+            System.out.println(newCustomer+ " purchased "+ item.getSize() );
+        }
+
         newCustomer.getTotalClothingCost(newCustomer.getItems());
 
-
-        //System.out.println(item.getDescription()+ " costs $"+item.getPrice() +" with tax and is size " + item.getSize());
     }
 }
 
