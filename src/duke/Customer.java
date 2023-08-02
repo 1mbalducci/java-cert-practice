@@ -12,6 +12,18 @@ public class Customer {
         private ArrayList< Clothing>items;
         private double total=0.0;
 
+        public Customer(){};
+
+        public Customer(String name,  int size) {
+                this.name = name;
+                this.size = setSize(size);
+        }
+
+        public Customer(String name,  String size) {
+                this.name = name;
+                this.size = size;
+        }
+
         public ArrayList< Clothing> addItems(ArrayList<Clothing> items) {
                 ArrayList <Clothing> itemsPurchased= new ArrayList<>();
                 for (Clothing  item:items) {
@@ -22,7 +34,7 @@ public class Customer {
                 return this.items=itemsPurchased;
         }
 
-        public Double getTotalClothingCost(ArrayList<Clothing> itemsPurchased) {
+        public Double getTotalClothingCost() {
                 for (Clothing totalItem : items) {
                                 //System.out.println(totalItem.getPrice());
                                 if (this.total + totalItem.getPrice() < 35) {
@@ -65,7 +77,7 @@ public class Customer {
         public void setSize(String size) {
                 this.size = size;
         }
-        public void setSize(int measurement) {
+        public String setSize(int measurement) {
                 switch (measurement) {
                         case 1, 2, 3:
                                 setSize("S");
@@ -76,7 +88,7 @@ public class Customer {
                         default:
                                 this.size = "M";
                 }
-
+        return this.size;
         }
 
 }

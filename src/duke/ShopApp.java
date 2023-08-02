@@ -4,32 +4,15 @@ import java.util.ArrayList;
 
 public class ShopApp {
     public static void main(String[] args) {
-        Customer newCustomer = new Customer();
-        newCustomer.setName("Pinky");
-        newCustomer.setSize(3);
+        Customer newCustomer = new Customer("Pinky",7);
 
         System.out.println(newCustomer.getName() + " is size " + newCustomer.getSize());
+        System.out.println(Clothing.MIN_PRICE);
+        Clothing item1 = new Clothing("Blue Jacket", 20.9, "L");
+        Clothing item2 = new Clothing("Orange T-shirt",10.5,"S");
+        Clothing item3 = new Clothing("Green Scarf",5.0, "S");
+        Clothing item4 = new Clothing("Blue T-Shirt",10.5, "M");
 
-        Clothing item1 = new Clothing();
-        Clothing item2 = new Clothing();
-        Clothing item3 = new Clothing();
-        Clothing item4 = new Clothing();
-
-        item1.setDescription("Blue Jacket");
-        item1.setPrice(20.9);
-        item1.setSize("L");
-
-        item2.setDescription("Orange T-shirt");
-        item2.price = 10.5;
-        item2.size = "S";
-
-        item3.description = "Green Scarf";
-        item3.price = 5.0;
-        item3.size = "S";
-
-        item4.description = "Blue T-Shirt";
-        item4.price = 10.5;
-        item4.size = "M";
 
         ArrayList<Clothing> items= new ArrayList<Clothing>();
         items.add(item1);
@@ -54,7 +37,7 @@ public class ShopApp {
             System.out.println(item.getDescription() + " =" + item.getPrice() + " with tax and it's size is " + item.getSize());
         }
 
-        newCustomer.getTotalClothingCost(newCustomer.getItems());
+        newCustomer.getTotalClothingCost();
         System.out.println("Total Price for " + newCustomer.getName() + " was "+ newCustomer.getTotal());
 
     }
