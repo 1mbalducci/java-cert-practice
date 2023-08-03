@@ -21,9 +21,12 @@ public class ShopApp {
         items.add(item4);
 
         System.out.println(items);
+        int [] intArray= new int[5];
+        intArray[0]= 1;
+        System.out.println("IntArray 0 is " + intArray[0]);
 
-
-
+        intArray[0]= 2;
+        System.out.println("IntArray 0 is " + intArray[0]);
         Double totalItem1;
 //        Double totalItem2 = item2.price * (1+tax);
         Double total = 0.0;
