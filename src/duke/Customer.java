@@ -12,6 +12,8 @@ public class Customer {
         private ArrayList< Clothing>items;
         private double total=0.0;
 
+        public double averagePriceItems;
+
         public Customer(){};
 
         public Customer(String name,  int size) {
@@ -44,7 +46,34 @@ public class Customer {
 
                                 return total;
                 }
+        public double averagePrice(ArrayList<Clothing> selections){
+                double itemsTotalPrice=0;
+                int numberOfItems=selections.size();
+                double average=0;
+                for (Clothing item:selections) {
+                      if (item.getSize().equals("S") ){
+                           itemsTotalPrice+=item.getPrice();
+                      }
+                }
+                try {average= itemsTotalPrice/numberOfItems;}
 
+                catch (ArithmeticException error2) {
+                        System.out.println("Arithmetic");
+                }
+                catch (Exception error3) {
+                        System.out.println("Yo There's an exception here! Don't cry");
+                }
+               // average = itemsTotalPrice/numberOfItems;
+                return averagePriceItems=average;
+        }
+
+        public double getAveragePriceItems() {
+                return averagePriceItems;
+        }
+
+        public void setAveragePriceItems(double averagePriceItems) {
+                this.averagePriceItems = averagePriceItems;
+        }
 
         public double getTotal() {
                 return total;

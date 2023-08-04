@@ -20,7 +20,7 @@ public class ShopApp {
         items.add(item3);
         items.add(item4);
 
-        System.out.println(items);
+        System.out.println("Clothing array has " + items.size()+ "Items");
         int [] intArray= new int[5];
         intArray[0]= 1;
         System.out.println("IntArray 0 is " + intArray[0]);
@@ -43,6 +43,26 @@ public class ShopApp {
         newCustomer.getTotalClothingCost();
         System.out.println("The total Price for " + newCustomer.getName() + " was "+ newCustomer.getTotal());
 
+        //double itemsTotalPrice=0;
+        int numberOfItems=0;
+        int average=0;
+        for (Clothing item:items) {
+            if (item.getSize().equals("S")) {
+                numberOfItems++;
+                average += item.getPrice();
+            }
+
+            try {
+                average = average / numberOfItems;
+                System.out.println("The average price of items is " + average);
+            } catch (ArithmeticException error2) {
+                System.out.println("Arithmetic");
+            } catch (Exception error3) {
+                System.out.println("Yo There's an exception here! Don't cry");
+            }
+            // average = itemsTotalPrice/numberOfItems;
+        }
+    }
     }
 }
 
