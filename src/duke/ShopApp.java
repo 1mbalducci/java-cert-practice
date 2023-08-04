@@ -62,7 +62,7 @@ public class ShopApp {
             }
             // average = itemsTotalPrice/numberOfItems;
         }
-    }
+
     }
 }
 
