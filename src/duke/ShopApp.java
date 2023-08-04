@@ -1,13 +1,15 @@
 package duke;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class ShopApp {
     public static void main(String[] args) {
-        Customer newCustomer = new Customer("Pinky",7);
+        Customer newCustomer = new Customer("Pinky",3);
 
         System.out.println(newCustomer.getName() + " is size " + newCustomer.getSize());
-        Clothing item1 = new Clothing("Blue Jacket", 20.9, "L");
+        Clothing item1 = new Clothing("Blue Jacket", 20.9, "S");
         Clothing item2 = new Clothing("Orange T-shirt",10.5,"S");
         Clothing item3 = new Clothing("Green Scarf",5.0, "S");
         Clothing item4 = new Clothing("Blue T-Shirt",10.5, "M");
@@ -55,7 +57,12 @@ public class ShopApp {
             } catch (Exception error3) {
                 System.out.println("Yo There's an exception here! Don't cry");
             }
-            // average = itemsTotalPrice/numberOfItems;
+
+        Collections.sort(newCustomer.getItems(), Collections.reverseOrder());
+        for (Clothing item:newCustomer.getItems()) {
+            System.out.println(item);
+        }
+
 
 
     }
