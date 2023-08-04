@@ -53,7 +53,8 @@ public class ShopApp {
             }
 
             try {
-                average = average / numberOfItems;
+                average = (numberOfItems==0) ? average/numberOfItems;
+                // the above line prevents the need to the exception below
                 System.out.println("The average price of items is " + average);
             } catch (ArithmeticException error2) {
                 System.out.println("Arithmetic");
