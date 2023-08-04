@@ -41,7 +41,7 @@ public class ShopApp {
         }
 
         newCustomer.getTotalClothingCost();
-        System.out.println("Total Price for " + newCustomer.getName() + " was "+ newCustomer.getTotal());
+        System.out.println("The total Price for " + newCustomer.getName() + " was "+ newCustomer.getTotal());
 
     }
 }
