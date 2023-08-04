@@ -7,7 +7,6 @@ public class ShopApp {
         Customer newCustomer = new Customer("Pinky",7);
 
         System.out.println(newCustomer.getName() + " is size " + newCustomer.getSize());
-        System.out.println(Clothing.MIN_PRICE);
         Clothing item1 = new Clothing("Blue Jacket", 20.9, "L");
         Clothing item2 = new Clothing("Orange T-shirt",10.5,"S");
         Clothing item3 = new Clothing("Green Scarf",5.0, "S");
@@ -20,49 +19,44 @@ public class ShopApp {
         items.add(item3);
         items.add(item4);
 
-        System.out.println("Clothing array has " + items.size()+ "Items");
-        int [] intArray= new int[5];
-        intArray[0]= 1;
-        System.out.println("IntArray 0 is " + intArray[0]);
-
-        intArray[0]= 2;
-        System.out.println("IntArray 0 is " + intArray[0]);
-        Double totalItem1;
-//        Double totalItem2 = item2.price * (1+tax);
-        Double total = 0.0;
-        String detailsItem;
+        System.out.println("Clothing array has " + items.size()+ " Items");
 
         newCustomer.addItems(items);
 
 
 
         for (Clothing item : newCustomer.getItems()) {
-            System.out.println(item.getDescription() + " =" + item.getPrice() + " with tax and it's size is " + item.getSize());
+            System.out.println(item);
         }
 
         newCustomer.getTotalClothingCost();
+        System.out.println("_______________________");
         System.out.println("The total Price for " + newCustomer.getName() + " was "+ newCustomer.getTotal());
+        System.out.println("_______________________");
 
-        //double itemsTotalPrice=0;
         int numberOfItems=0;
-        int average=0;
-        for (Clothing item:items) {
-            if (item.getSize().equals("S")) {
+        double average=0;
+        double totalCostOfItems=0;
+        for (Clothing item:newCustomer.getItems()) {
                 numberOfItems++;
-                average += item.getPrice();
+                totalCostOfItems += item.getPrice();
             }
 
             try {
-                average = (numberOfItems==0) ? average/numberOfItems;
+                average = (numberOfItems==0) ? average: totalCostOfItems/numberOfItems;
                 // the above line prevents the need to the exception below
-                System.out.println("The average price of items is " + average);
+                System.out.println("Current # of items is " + numberOfItems);
+                System.out.println("Current total Price " + totalCostOfItems);
+                System.out.println("Current average price of items is " + average);
+                System.out.println("_____________________");
+
             } catch (ArithmeticException error2) {
                 System.out.println("Arithmetic");
             } catch (Exception error3) {
                 System.out.println("Yo There's an exception here! Don't cry");
             }
             // average = itemsTotalPrice/numberOfItems;
-        }
+
 
     }
 }
