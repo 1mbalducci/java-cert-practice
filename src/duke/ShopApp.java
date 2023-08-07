@@ -21,7 +21,7 @@ public class ShopApp {
         items.add(item3);
         items.add(item4);
 
-        System.out.println("Clothing array has " + items.size()+ " Items");
+        System.out.println("Clothing array has " + items.size()+ " items in it.");
 
         newCustomer.addItems(items);
 
