@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07edd415-023a-4c48-b279-34c391876215" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/duke/Clothing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/duke/Clothing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/duke/ShopApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/duke/ShopApp.java" afterDir="false" />
-    </list>
+    <list default="true" id="07edd415-023a-4c48-b279-34c391876215" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

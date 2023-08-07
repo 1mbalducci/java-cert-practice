@@ -6,7 +6,7 @@ import java.util.Collections;
 
 public class ShopApp {
     public static void main(String[] args) {
-        Customer newCustomer = new Customer("Pinky",3);
+        Customer newCustomer = new Customer("Pinky",4);
 
         System.out.println(newCustomer.getName() + " is size " + newCustomer.getSize());
         Clothing item1 = new Clothing("Blue Jacket", 20.9, "S");
